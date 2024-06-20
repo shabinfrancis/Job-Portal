@@ -10,6 +10,8 @@ const errorHandler = require('./middleware/error.js');
 
 const authRoutes = require('./routes/authRoutes.js')
 const userRoutes = require('./routes/userRoutes.js')
+const jobTypeRoutes = require('./routes/jobTypeRoutes.js')
+const jobRoute = require('./routes/jobRoutes');
 
 mongoose.connect(process.env.DATABASE)
   .then(() => {
@@ -27,6 +29,8 @@ app.use(cors());
 
 app.use('/', authRoutes);
 app.use('/', userRoutes);
+app.use('/', jobTypeRoutes);
+app.use('/', jobRoute);
 
 app.use(errorHandler);
 
