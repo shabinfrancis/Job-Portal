@@ -13,6 +13,7 @@ const userRoutes = require('./routes/userRoutes.js')
 const jobTypeRoutes = require('./routes/jobTypeRoutes.js')
 const jobRoute = require('./routes/jobRoutes');
 
+
 mongoose.connect(process.env.DATABASE)
   .then(() => {
     console.log("DB connected");
